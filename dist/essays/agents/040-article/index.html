@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>当GPT-4能同时读懂你的表情、语调和心跳数据｜你好不吃虾</title><meta name="description" content="当GPT-4能同时读懂你的表情、语调和心跳数据 想象一下：你正在参加一个充满活力的鸡尾酒会🍹，充满了谈话的嗡嗡声和酒杯的碰撞声🍻 .你是一个悠闲的观察者👀，舒适地坐落在一个角落里。 然而，你仍然可以通过解读人们的语言和非语言暗示，轻松地找出不同人之间的社交关系，了解发生了什么，甚至提供社交建议。 如"><link rel="stylesheet" href="../../../css/index.css"></head><body><div class="site-shell"><header class="topbar"><a class="brand" href="../../../index.html"><span class="brand-mark">虾</span><span>你好不吃虾</span></a><nav class="nav"><a href="../../../about/">关于</a><a href="../../index.html">文章</a><a href="../../../research/">研究</a><a href="../../../contact/">联系</a></nav><a class="nav-cta" href="../../index.html">文章 ↗</a></header><main class="article-page"><a class="back-link" href="../../index.html">← 返回文章列表</a><div class="article-meta"><span>AI × RESEARCH</span><span>3 MIN READ</span></div><h1>当GPT-4能同时读懂你的表情、语调和心跳数据</h1><p class="article-lede">当GPT-4能同时读懂你的表情、语调和心跳数据 想象一下：你正在参加一个充满活力的鸡尾酒会🍹，充满了谈话的嗡嗡声和酒杯的碰撞声🍻 .你是一个悠闲的观察者👀，舒适地坐落在一个角落里。 然而，你仍然可以通过解读人们的语言和非语言暗示，轻松地找出不同人之间的社交关系，了解发生了什么，甚至提供社交建议。 如果大型语言模型（LLM）能够复制这种社交能力，那么我们就可以说它具备了一定的社交…</p><div class="article-layout"><article class="article-body"><p>想象一下：你正在参加一个充满活力的鸡尾酒会🍹，充满了谈话的嗡嗡声和酒杯的碰撞声🍻  .你是一个悠闲的观察者👀，舒适地坐落在一个角落里。 然而，你仍然可以通过解读人们的语言和非语言暗示，轻松地找出不同人之间的社交关系，了解发生了什么，甚至提供社交建议。</p>
+<p>如果大型语言模型（LLM）能够复制这种社交能力，那么我们就可以说它具备了一定的社交能力。 想知道不同的 LLM 在理解和驾驭社交互动方面的表现如何吗？ 看看这些由人工智能模型处理的演示</p>
+<p>“我今天哭了 4 次”</p>
+<p>&lt;figure view-type="Preview"&gt;&lt;source name="demo1.mp4" mime="video/mp4" origin-height="1462.000000" origin-width="3724.000000" size="32278627" token="ZFygbvrhhoFDozxzGAJcDuKqnsd"/&gt;&lt;/figure&gt;</p>
+<h3>KokoMind：社交互动的多方面评估数据集</h3>
+<p>KokoMind 包含 150 个复杂的多方社交互动（每个来源 50 个）以及自由文本问题和答案。 为确保多样性和可扩展性，避免数据污染，所有社交互动、问题和答案均由 GPT-4 生成，随后由人类专家进行验证。 这些生成基于三个不同的来源：</p>
+<p><strong>🤖 GPT-4-only</strong>: 此子集仅由 GPT-4 通过提示创建，不基于现有来源。</p>
+<p>🎦 <strong>基于电影</strong>：为避免数据污染，这部分数据基于从 2022 年之后上映的电影中提取的各种场景。GPT-4 塑造了这些情况，在保持核心本质的同时添加了自己的元素。</p>
+<p>🧠 <strong>基于 ToMi</strong>：此段包含由模拟数据集 ToMi 支持的数据，该数据集涉及将物理对象移动到不同位置，这是心智理论的经典测试。这些社交互动再次被 GPT-4 美化和扩展。</p>
+<p><strong>对于每一次社交互动，我们都会提出各种问题，旨在探讨社会理解的以下方面：</strong></p>
+<p>🧠 心智理论：评估对他人心理状态和观点的理解的问题。</p>
+<p>👍 社会规范：旨在辨别情境中的社会价值观和规范的问题。</p>
+<p>😃 情绪识别：旨在识别和理解上下文中的情绪元素的问题。</p>
+<p><strong>👨‍👩‍👧</strong>  社会关系： 以人际动态和关系为重点的查询。</p>
+<p>🤔 反事实问题：旨在探索替代结果或可能性的假设查询。</p>
+<p>📝 社交建议：引发与给定情况相关的建议或行动建议的问题。</p>
+<p>以下是数据分布：</p>
+<p><img src="../../../article-assets/DCVMbwgZKoNdmRxI.png" alt=""></p>
+<h3>结果：GPT-4 位居榜首，在许多情况下紧随其后的是 Claude</h3>
+<p>我们以text-davinci-003为参考，按照 AlpacaEval 评估了不同的模型，并进行了一项消减研究，即从上下文中删除括号中的非语言线索（如紧张地喝咖啡等）。 以下是一些有趣的启示。</p>
+<ol>
+<li>在两位LLM基于评估者的中，与 Claude 相比，GPT-4 在识别获胜模型方面表现出更大的确定性和信心。</li>
+<li>当情境中没有非语言线索，互动要么完全由 GPT-4 生成，要么以电影为基础时，克劳德的表现优于 GPT-4（两位评估者都同意这一点）；而当情境中包含非语言线索时，GPT-4 的表现总是优于克劳德。 一种可能的解释是，GPT-4 是一种多模态模型，因此正如预期的那样，它能更好地理解额外的非语言信息。 还要注意的是，当出现非语言线索时，基于 LLM 的评估者会认为表现最好的模型比表现较差的模型更有优势。</li>
+<li>也许有人会问，如果社会互动是由 GPT-4 生成的，这是否意味着 GPT-4 已经可以回答这些问题？ 与问题的类型相比，来源所起的作用似乎要小一些。</li>
+<li>在与心智理论无关的任务中，尤其是从 ToMi 数据集生成的样本中，基于 LLM 的评估者似乎更容易确定优越的模型。 这可能是由于即使是 LLM 评估者也很难在心智理论情境中找出正确答案。</li>
+<li>Claude 擅长在许多情况下提供社交建议。</li>
+</ol>
+<h3>局限性</h3>
+<p>该项目虽然在很多方面都令人振奋，但也存在一定的局限性。 首先，KokoMind 的规模相对较小，这可能会限制该结论的广泛适用性和全面性。 其次，KokoMind 中的所有交互都是由 GPT-4 生成的，需要人工验证，因此很难扩大数据集的规模。 此外，虽然 KokoMind 在数据集中提供了人类验证过的答案，但在评估过程中并没有将这些答案作为参考，由于这些答案是由 GPT-4 生成的，因此可能会偏向于 GPT-4，未来的研究重点可以放在如何用人类验证过的机器生成的参考答案来评估模型上。 其次，评估的所有模型都是 2023 年 6 月 1 日之前的版本。 新发布的模型可能具有更好的性能。 尽管存在这些局限性，该团队仍设想将 KokoMind 作为跳板，用于未来与社交智能、多模态语言模型等相关的研究。</p>
+<p>参考资料：https://chats-lab.github.io/KokoMind/</p></article><aside><div class="aside-card"><span class="section-kicker">ABOUT THIS NOTE</span><p>这是「你好不吃虾」的 AI for Science 研究笔记，记录论文、方法与可复用的科研工作流。</p><a href="../../index.html">更多文章 ↗</a></div></aside></div></main><footer><span>你好不吃虾 · AI for Science</span><span>研究、构建、验证</span></footer></div></body></html>
