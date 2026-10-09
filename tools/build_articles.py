@@ -195,7 +195,7 @@ for target in (ROOT / 'index.html', OUT / 'index.html'):
 root_posts = ROOT / 'essays'
 if root_posts.exists():
     shutil.rmtree(root_posts)
-shutil.copytree(POSTS, root_posts)
+shutil.copytree(POSTS, root_posts, ignore=shutil.ignore_patterns('index 2.html'))
 for page in root_posts.rglob('*.html'):
     page_html = page.read_text(encoding='utf-8')
     page.write_text(
