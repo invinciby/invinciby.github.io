@@ -1,0 +1,111 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>重磅！微软NatureLM横空出世：AI“炼丹师”破解自然语言，化学、材料、生物迎来新范式！｜你好不吃虾</title><meta name="description" content="重磅！微软NatureLM横空出世：AI“炼丹师”破解自然语言，化学、材料、生物迎来新范式！ 摘要： Foundation 模型彻底改变了自然语言处理和人工智能，显著增强了机器理解和生成人类语言的方式。受到这些基础模型成功的启发，研究人员为各个科学领域开发了基础模型，包括小分子、材料、蛋白质、DNA"><link rel="stylesheet" href="../../../css/index.css"></head><body><div class="site-shell"><header class="topbar"><a class="brand" href="../../../index.html"><span class="brand-mark">虾</span><span>你好不吃虾</span></a><nav class="nav"><a href="../../../about/">关于</a><a href="../../index.html">文章</a><a href="../../../research/">研究</a><a href="../../../contact/">联系</a></nav><a class="nav-cta" href="../../index.html">文章 ↗</a></header><main class="article-page"><a class="back-link" href="../../index.html">← 返回文章列表</a><div class="article-meta"><span>AI × MATERIALS</span><span>6 MIN READ</span></div><h1>重磅！微软NatureLM横空出世：AI“炼丹师”破解自然语言，化学、材料、生物迎来新范式！</h1><p class="article-lede">重磅！微软NatureLM横空出世：AI“炼丹师”破解自然语言，化学、材料、生物迎来新范式！ 摘要： Foundation 模型彻底改变了自然语言处理和人工智能，显著增强了机器理解和生成人类语言的方式。受到这些基础模型成功的启发，研究人员为各个科学领域开发了基础模型，包括小分子、材料、蛋白质、DNA、RNA 甚至细胞。然而， 这些模型通常是孤立训练的，缺乏跨不同科学领域整合的能…</p><div class="article-layout"><article class="article-body"><p><strong>摘要：</strong> Foundation 模型彻底改变了自然语言处理和人工智能，显著增强了机器理解和生成人类语言的方式。受到这些基础模型成功的启发，研究人员为各个科学领域开发了基础模型，包括小分子、材料、蛋白质、DNA、RNA 甚至细胞。然而，<strong>这些模型通常是孤立训练的，缺乏跨不同科学领域整合的能力</strong>。认识到这些领域中的实体都可以表示为序列，它们共同构成了“自然语言”，因此我们引入了自然语言模型 （NatureLM），这是一种基于序列的科学基础模型，专为科学发现而设计。NatureLM 使用来自多个科学领域的数据进行预训练，提供了一个统一的多功能模型，支持各种应用，包括：（i） 使用文本指令生成和优化小分子、蛋白质、RNA 和材料;（ii） 跨结构域生成/设计，例如蛋白质到分子和蛋白质到 RNA 的生成;以及 （iii） 在不同领域的顶级表现，达到或超越最先进的专业模型。</p>
+<p>NatureLM 为各种科学任务提供了一种有前途的通用方法，包括药物发现（苗头化合物生成/优化、ADMET 优化、合成）、新型材料设计以及治疗性蛋白质或核苷酸的开发。我们开发了不同大小（10 亿、80 亿和 467 亿个参数）的 NatureLM 模型，并观察到随着模型大小的增加，性能有了明显的提高。</p>
+<p><img src="../../../dist/article-assets/FydbbXMFAoDpoKxM.png" alt=""></p>
+<hr>
+<p>今天我们要聊一个可能颠覆科研方式的“大杀器”——来自微软研究院科学智能中心的<strong>Nature Language Model (NatureLM)</strong>！🔬</p>
+<p>自然科学，这个囊括了物理、化学、生物、材料科学等众多领域的庞大知识体系，一直是人类探索世界的基石。但长久以来，各个学科都发展出了自己独特的“语言”（数据表达、研究方法、理论体系）。这就像一个个独立的“知识孤岛”，虽然内部沟通顺畅，却给跨学科的交流与合作带来了不小的障碍。</p>
+<p>正如NatureLM团队在论文中指出的：</p>
+<blockquote>“从基因功能的深入探究到新材料的创新设计，前沿的创新成果往往依赖于不同学科知识与技术的有机整合。由于业界目前缺乏一个能够有效连接各学科的统一框架，科研人员的视野常常局限于自身的专业领域...从而在一定程度上制约了科学整体发展的进程。”</blockquote>
+<p>为了打破这些壁垒，NatureLM应运而生！它不只是一个模型，更是一个<strong>连接不同科学领域的桥梁</strong>，一个能理解“自然语言”（如分子序列、蛋白质序列）和“人类语言”（我们的指令）的超级助手。</p>
+<p><strong>NatureLM是什么？它如何“炼丹”？</strong></p>
+<p>简单来说，NatureLM是一个基于Transformer解码器架构的<strong>序列基础模型</strong>。它的目标是“解读自然界的语言 (Deciphering the Language of Nature)”，从而推动科学发现。</p>
+<ol>
+<li><strong>海量跨学科预训练数据</strong>：</li>
+</ol>
+<p>NatureLM的“食谱”非常丰富，包含了<strong>1430亿个Token</strong>，涵盖：</p>
+<ul>
+<li><strong>小分子</strong>：转化为SMILES序列 (如：<code>⟨mol⟩c1ccccc1⟨/mol⟩</code> 代表苯)</li>
+<li><strong>蛋白质、DNA、RNA</strong>：FASTA序列 (如：<code>⟨protein⟩LALSLTAD...⟨/protein⟩</code>)</li>
+<li><strong>晶体材料</strong>：化学组分和空间群展平为序列 (如：<code>Li4O8⟨sg225⟩</code>)</li>
+<li><strong>文本数据</strong>：科学文献、指令等。</li>
+<li><strong>特色跨领域数据</strong>：</li>
+</ul>
+<ul>
+<li><strong>穿插序列</strong>：科学文献中的分子/蛋白名称被替换为其序列，与文本交织。</li>
+<li><strong>并行文本与科学实体</strong>：数据库中的科学事实与其文本描述配对。</li>
+<li><strong>中心法则连接</strong>：DNA序列中可翻译的部分被替换为蛋白质序列。</li>
+</ul>
+<p>&lt;grid&gt;</p>
+<p><img src="../../../dist/article-assets/AAi6bRlLPo9HHsxx.png" alt=""></p>
+<p><img src="../../../dist/article-assets/Mc00bZZwzobndSxv.png" alt=""></p>
+<p>&lt;/grid&gt;</p>
+<ol>
+<li><strong>强大的模型架构与持续预训练</strong>：</li>
+</ol>
+<ul>
+<li>NatureLM基于成熟的大语言模型（如Llama 3 8B, Mixtral 8x7B）进行构建和持续预训练，并为科学实体引入了新的Token。</li>
+<li>采用<strong>两阶段预训练</strong>策略，先训练新Token，再联合训练整个网络，确保稳定性和性能。</li>
+<li>提供三种规模版本：<strong>1B、8B、和46.7B (8x7B专家混合模型)</strong>，满足不同需求。</li>
+</ul>
+<ol>
+<li><strong>指令微调与后训练</strong>：</li>
+</ol>
+<ul>
+<li>在约<strong>510万个指令-响应对</strong>上进行监督式微调 (SFT)，覆盖60多个科学子任务，如分子优化、抗体设计、gRNA设计等。</li>
+<li>后续还可探索RLHF等技术进一步优化。</li>
+</ul>
+<p><strong>NatureLM的“神操作”：三大应用场景展示</strong></p>
+<p>NatureLM到底有多强？</p>
+<p><strong>场景一：小分子“智造”——从无到有，按需定制</strong> 🧪</p>
+<ul>
+<li><strong>1. 无条件分子生成：AI“凭空”画分子</strong></li>
+</ul>
+<p>只需给一个 <code>⟨mol⟩</code> 起始符，NatureLM就能生成有效的、新颖的分子SMILES。</p>
+<p><img src="../../../dist/article-assets/M7txbWyQToaaXkxQ.png" alt=""></p>
+<ul>
+<li><strong>2. 属性到分子生成：你说要求，AI来设计</strong></li>
+</ul>
+<p>“给我一个有4个氢键供体的分子。” NatureLM就能给出：<code>⟨mol⟩C(C<a href="C(=O" target="_blank" rel="noreferrer">C@@H</a>O)N)CN=C(N)N⟨/mol⟩</code>。</p>
+<p>它还能处理多属性组合，比如同时指定QED和TPSA值，生成满足条件的分子。</p>
+<p><img src="../../../dist/article-assets/N87Fbcxqeo3WLvxE.png" alt=""></p>
+<p>给定输入“TPSA=40, QED=0.5”时，生成分子的TPSA和QED的联合分布</p>
+<ul>
+<li><strong>3. SMILES与IUPAC名称互译：化学界的“翻译官”</strong></li>
+</ul>
+<p>在SMILES和IUPAC名称互译任务上，NatureLM (8x7B) 表现出色，甚至媲美专业模型STOUT。</p>
+<p><img src="../../../dist/article-assets/RU2fbEdPqoIFcexY.png" alt=""></p>
+<ul>
+<li><strong>4. 靶点感知的小分子生成与优化：精准“打击”疾病靶点</strong></li>
+</ul>
+<p>这是药物研发的核心环节！NatureLM可以：</p>
+<ul>
+<li>根据<strong>目标蛋白序列</strong>直接生成可能与之结合的全新化合物（Hit Generation）。</li>
+<li>根据<strong>目标蛋白序列和已知分子片段</strong>，优化生成新的功能片段（Lead Optimization）。</li>
+</ul>
+<p>实验表明，在对接打分（Vina Score，越低越好）、QED、合成可及性等方面，NatureLM生成的化合物优于现有基线方法。</p>
+<p><img src="../../../dist/article-assets/BMHubjZXjoLELfxA.png" alt=""></p>
+<p><img src="../../../dist/article-assets/WjJGbDN6HoDiKyx0.png" alt=""></p>
+<p><strong>场景二：蛋白质工程新突破——定制“生命分子”</strong> 🧬</p>
+<p>NatureLM还能设计蛋白质！以设计能与<strong>血红素</strong>（Heme，一种重要辅因子）结合的蛋白质为例：</p>
+<ul>
+<li><strong>设计方式一</strong>：输入文本指令“设计一个能结合血红素的蛋白质”。</li>
+<li><strong>设计方式二</strong>：输入血红素的SMILES表达式。</li>
+</ul>
+<p>两种方式都能生成潜在的血红素结合蛋白。生成的序列虽与已知蛋白相似性中等，但预测的3D结构却与真实血红素结合蛋白高度相似（RMSD仅1.068 Å），并且关键的组氨酸残基位置准确，具备潜在功能！</p>
+<p>视频1</p>
+<p>基于文本指令设计的血红素结合蛋白</p>
+<p>视频2</p>
+<p>基于包含 SMILES 表达式的小分子指令设计的血红素结合蛋白</p>
+<p><strong>场景三：新材料探索的“加速器”——发现“超级材料”</strong> 💎</p>
+<p>材料科学也能被NatureLM赋能！实验要求NatureLM设计一种目标<strong>体积模量 (Bulk Modulus) 为 400 GPa</strong>（与钻石硬度相当）的材料。</p>
+<ul>
+<li>NatureLM首先输出材料组分和空间群。</li>
+<li>然后，进一步微调得到<strong>NatureLM-Mat3D</strong>模型，自回归生成材料的晶格参数和原子坐标。</li>
+<li>DFT计算验证，生成的两种新材料体积模量分别达到390 GPa和394 GPa，非常接近目标！并且，这两种结构都是Materials Project数据库中未曾记录的<strong>全新材料</strong>！</li>
+</ul>
+<p><img src="../../../dist/article-assets/FQrNbx4IsoGm3GxB.png" alt=""></p>
+<p>NatureLM 设计的两款材料</p>
+<p><strong>NatureLM：不止于此，未来可期！</strong> 🚀</p>
+<p>NatureLM的出现，无疑为科研领域注入了强大的新动能。它：</p>
+<ul>
+<li><strong>打破学科壁垒</strong>：提供了一个统一的多学科AI框架。</li>
+<li><strong>加速创新进程</strong>：通过AI辅助，快速筛选、设计、优化。</li>
+<li><strong>降低科研门槛</strong>：让更多研究者能利用先进的计算工具。</li>
+</ul>
+<p>当然，NatureLM团队也坦言，模型在语言能力和少样本学习方面仍有提升空间。但这仅仅是个开始！随着AI与自然科学的深度融合，我们有理由相信，未来的科学突破将更加迅速，创新也将更加无界。</p>
+<p><strong>想了解更多？</strong></p>
+<ul>
+<li><strong>论文链接</strong>：<a href="https://arxiv.org/abs/2502.07527" target="_blank" rel="noreferrer">https://arxiv.org/abs/2502.07527</a></li>
+<li><strong>项目网站及更多应用</strong>：<a href="https://NatureLM.github.io" target="_blank" rel="noreferrer">https://NatureLM.github.io</a></li>
+</ul>
+<p>让我们共同期待NatureLM以及更多AI for Science工具，为人类科学的星辰大海带来更多惊喜！💡</p></article><aside><div class="aside-card"><span class="section-kicker">ABOUT THIS NOTE</span><p>这是「你好不吃虾」的 AI for Science 研究笔记，记录论文、方法与可复用的科研工作流。</p><a href="../../index.html">更多文章 ↗</a></div></aside></div></main><footer><span>你好不吃虾 · AI for Science</span><span>研究、构建、验证</span></footer></div></body></html>

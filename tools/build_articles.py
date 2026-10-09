@@ -187,4 +187,20 @@ for target in (ROOT / 'index.html', OUT / 'index.html'):
         text = text.replace('href="essays/001-article/" target="_blank" rel="noreferrer"', 'href="essays/001-article/"')
         text = text.replace('href="essays/002-article/" target="_blank" rel="noreferrer"', 'href="essays/002-article/"')
         target.write_text(text, encoding='utf-8')
+
+# GitHub Pages for this repository publishes from the repository root. Keep
+# the dist build for local/portable previews, and mirror the generated article
+# library into the root so /essays/ exists on the live site. Root pages reuse
+# the already-published dist assets instead of committing a second 66 MB copy.
+root_posts = ROOT / 'essays'
+if root_posts.exists():
+    shutil.rmtree(root_posts)
+shutil.copytree(POSTS, root_posts)
+for page in root_posts.rglob('*.html'):
+    page_html = page.read_text(encoding='utf-8')
+    page.write_text(
+        page_html.replace('../../../article-assets/', '../../../dist/article-assets/'),
+        encoding='utf-8',
+    )
+
 print(f'generated {len(articles)} articles')
